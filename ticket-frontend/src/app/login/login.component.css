@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.home-image{
+    width: 80%;
+}
+
+.home-title{
+    text-align: start;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+
+}
+.h-description{
+    margin-top: 2%;
+}
+
+
+
+p{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+nav{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+img{
+    text-align: center;
+}
+
+.nav-item{
+    margin: 1%;
+} 
