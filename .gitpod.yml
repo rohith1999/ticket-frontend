@@ -4,5 +4,5 @@ tasks:
     command: ng serve -o
 # Ports to expose on workspace startup
 ports:
-  - port: 8000
+  - port: 4200
     onOpen: open-preview
