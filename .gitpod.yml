@@ -1,6 +1,6 @@
 # Commands to start on workspace startup
 tasks:
-  - init:  npm install && npm install -g @angular/cli
+  - init: cd ticket-frontend && npm install && npm install -g @angular/cli
     command: ng serve -o
 # Ports to expose on workspace startup
 ports:
