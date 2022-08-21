@@ -1,16 +1,9 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="/assets/images/logo.png" alt="" width="30" style="display: inline;" height="30">
-    Ticket
-  </a>
-</nav>
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm">
       <img class="home-image img-fluid" src="/assets/images/login.png">
     </div>
-    <div class="col">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="col">
       &nbsp;
       <h3 class="home-title" style="text-align: center ;">Login</h3>
 
@@ -23,16 +16,30 @@
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">
-              <i class="bi bi-phone-fill text-primary"></i>
-            </span>
+              <i class="bi bi-person-circle text-primary"></i></span>
           </div>
-          <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+          <input type="text" ngModel class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+          placeholder="Username" name="userName" id="userName">
         </div>
       </div>
-      <div class="text-center">
-        <button type="button" class="btn btn-primary">Login</button>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="bi bi-shield-lock-fill text-primary"></i>            </span>
+          </div>
+          <input type="password" ngModel class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+          placeholder="Password" name="userPassword" id="userPassword">
+        </div>
       </div>
-    </div>
+
+
+
+      <div class="text-center">
+        <input type="submit" class="btn btn-primary" value="Login"/>
+      </div>
+    </form>
 
   </div>
 </div>
