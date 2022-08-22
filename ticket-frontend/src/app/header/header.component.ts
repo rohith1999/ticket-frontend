@@ -28,6 +28,12 @@ export class HeaderComponent implements OnInit {
     this.userAuthService.clear()
     this.router.navigate(["/"])
   }
+  
+  public roleMatch(allowedRoles: any): boolean{
+
+    return this.userService.roleMatch(allowedRoles)
+
+  }
 
   
 

@@ -18,6 +18,14 @@ export class UserService {
       loginData, { headers: this.requestHeader })
   }
 
+  public forUser(){
+    return this.httpClient.get(environment.baseUrl +"/user/for-user",{responseType:'text'})
+  }
+
+  public forAdmin(){
+    return this.httpClient.get(environment.baseUrl +"/user/for-admin",{responseType:'text'})
+  }
+
 
   public roleMatch(allowedRoles: any): boolean {
 
