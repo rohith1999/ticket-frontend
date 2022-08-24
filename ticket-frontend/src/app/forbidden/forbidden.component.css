@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.centered {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    position: absloute;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; ;
+}
