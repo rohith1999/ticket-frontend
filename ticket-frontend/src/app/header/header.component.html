@@ -25,13 +25,12 @@
 
           <li class="nav-item">
 
-            
-
           </li>
 
          
         </ul>
-        <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()" >Logout</button>
+        <mat-icon type="button" *ngIf="isLoggedIn()" (click)="logout()"
+        data-toggle="tooltip" data-placement="bottom" title="Logout">logout</mat-icon>
       </div>
     </div>
   </nav>
