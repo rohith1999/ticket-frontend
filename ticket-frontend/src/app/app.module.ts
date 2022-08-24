@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+
+
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +19,7 @@ import { AuthGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { UserService } from './_services/user.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
   ],
   providers: [AuthGuard,
   {

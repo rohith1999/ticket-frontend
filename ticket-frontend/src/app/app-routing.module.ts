@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './_auth/auth.guard';
 
+
 const routes: Routes = [
   {path:"",component: LoginComponent},
   {path:"user",component: UserComponent, canActivate: [AuthGuard], data:{roles: ['User']}},
