@@ -1,36 +1,54 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-        <a class="navbar-brand" href="#">
-            <img class="logo" src="/assets/images/logo.png" alt="" width="30" style="display: inline;" height="30">
-            Ticket
-        </a>
+    <a class="navbar-brand" href="#">
+      <img class="logo" src="/assets/images/logo.png" alt="" width="30" style="display: inline;" height="30">
+      Ticket
+    </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link"  routerLinkActive="active" aria-current="page" routerLink="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/admin" *ngIf="roleMatch(['Admin'])"
-            >Admin Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/user" *ngIf="roleMatch(['User'])">
-              User Dashboard</a>
-          </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/home">
+            <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()" (click)="logout()"
+              data-toggle="tooltip" data-placement="bottom" title="Home">home</mat-icon> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/admin"
+            *ngIf="roleMatch(['Admin'])">
+            <mat-icon fontSet="material-icons-round" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
+              dashboard</mat-icon> Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/user"
+            *ngIf="roleMatch(['User'])">
+            <mat-icon fontSet="material-icons-round" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
+              dashboard</mat-icon> Dashboard
+          </a>
+        </li>
 
-          <li class="nav-item">
+      </ul>
 
-          </li>
 
-         
-        </ul>
-        <mat-icon type="button" *ngIf="isLoggedIn()" (click)="logout()"
-        data-toggle="tooltip" data-placement="bottom" title="Logout">logout</mat-icon>
-      </div>
+      <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()" [matMenuTriggerFor]="menu">
+        account_circle</mat-icon>
+
+      <mat-menu #menu class="menu-font">
+        <button mat-menu-item (click)="openUserDetails()">
+          <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()">details</mat-icon><span>User
+            Details</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()">logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
     </div>
-  </nav>
+  </div>
+</nav>

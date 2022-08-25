@@ -8,26 +8,38 @@ import { UserService } from '../_services/user.service';
 })
 export class AdminComponent implements OnInit {
 
-  message: string="";
+  count: string ="";
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.forAdmin()
+    this.getUserCount()
   }
 
-  public forAdmin(){
-    this.userService.forAdmin().subscribe(
+  // public forAdmin(){
+  //   this.userService.forAdmin().subscribe(
 
+  //     (response)=> {
+  //       this.message = response
+  //     },
+  //     (error)=>{
+  //       console.log(error)
+
+  //     }
+  //   )
+  // }
+
+  public getUserCount(){
+    this.userService.getUserCount().subscribe(
       (response)=> {
-        console.log(response)
-        this.message = response
-      },
-      (error)=>{
-        console.log(error)
+        
+      this.count = response
+    },
+    (error)=>{
+      console.log(error)
 
-      }
-    )
+    })
   }
+  
 
 }

@@ -26,6 +26,10 @@ export class UserService {
     return this.httpClient.get(environment.baseUrl +"/user/for-admin",{responseType:'text'})
   }
 
+  public getUserCount(){
+    return this.httpClient.get(environment.baseUrl+"/user/get-count",{responseType:"text"})
+  }
+
 
   public roleMatch(allowedRoles: any): boolean {
 

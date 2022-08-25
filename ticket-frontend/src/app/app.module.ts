@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatIconModule} from '@angular/material/icon'
-
+import {MatChipsModule} from '@angular/material/chips';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -15,7 +17,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent, UserDetailsDialog } from './header/header.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
@@ -34,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     UserComponent,
     HeaderComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    UserDetailsDialog,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatChipsModule,
+    MatMenuModule,
+    MatDialogModule,
   ],
   providers: [AuthGuard,
   {
