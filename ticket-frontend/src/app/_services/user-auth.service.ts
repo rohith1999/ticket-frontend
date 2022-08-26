@@ -18,6 +18,21 @@ export class UserAuthService {
     return JSON.parse(localStorage.getItem('roles') || '{}');
   }
 
+  public setUserDetails(user: any){
+
+    localStorage.setItem("userDetails",JSON.stringify(user))
+    
+  }
+
+  public getUserDetails():[]{
+    console.log(localStorage.getItem("userDetails") || '{}')
+    return JSON.parse(localStorage.getItem("userDetails") || '{}')
+
+
+  }
+
+ 
+
   public setToken(jwtToken: string) {
 
     localStorage.setItem("jwtToken", jwtToken)

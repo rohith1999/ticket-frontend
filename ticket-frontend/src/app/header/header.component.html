@@ -14,7 +14,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/home">
-            <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()" (click)="logout()"
+            <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()" 
               data-toggle="tooltip" data-placement="bottom" title="Home">home</mat-icon> Home
           </a>
         </li>
@@ -41,7 +41,7 @@
 
       <mat-menu #menu class="menu-font">
         <button mat-menu-item (click)="openUserDetails()">
-          <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()">details</mat-icon><span>User
+          <mat-icon type="button" fontSet="material-icons-round" *ngIf="isLoggedIn()">details</mat-icon><span>{{roles[0].roleName}}
             Details</span>
         </button>
         <button mat-menu-item (click)="logout()">

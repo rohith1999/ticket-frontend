@@ -7,7 +7,6 @@
 
 .home-title{
     text-align: start;
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 
 }
@@ -15,15 +14,7 @@
     margin-top: 2%;
 }
 
-
-
-p{
-    font-family: 'Montserrat', sans-serif;
-
-}
-
 nav{
-    font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
 }
 
@@ -35,3 +26,9 @@ img{
 .nav-item{
     margin: 1%;
 } 
+
+.login-field {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }

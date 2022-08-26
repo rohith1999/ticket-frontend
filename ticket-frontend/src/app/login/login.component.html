@@ -12,32 +12,25 @@
         for you.
       </p>
 
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="bi bi-person-circle text-primary"></i></span>
-          </div>
-          <input type="text" ngModel class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
-          placeholder="Username" name="userName" id="userName">
-        </div>
-      </div>
+      <div class="text-center">
+        <mat-form-field class="login-field" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="text" ngModel name="userName" id="userName" matInput>
+        </mat-form-field>
 
-      <div class="input-group input-group-sm mb-3">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="bi bi-shield-lock-fill text-primary"></i>            </span>
-          </div>
-          <input type="password" ngModel class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
-          placeholder="Password" name="userPassword" id="userPassword">
-        </div>
+        <mat-form-field class="login-field" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" ngModel name="userPassword" id="userPassword" matInput>
+        </mat-form-field>
       </div>
 
 
 
       <div class="text-center">
-        <input type="submit" class="btn btn-primary" value="Login"/>
+        <button mat-raised-button type="submit" >Login</button>
+        &nbsp;
+        <button mat-raised-button >Register</button>
+
       </div>
     </form>
 

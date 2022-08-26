@@ -6,6 +6,10 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatChipsModule} from '@angular/material/chips';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 
 
@@ -50,6 +54,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatChipsModule,
     MatMenuModule,
     MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [AuthGuard,
   {

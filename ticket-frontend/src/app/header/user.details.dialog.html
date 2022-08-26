@@ -1,4 +1,21 @@
-<!-- <h4>User Details</h4> -->
+<h4 style="text-align: center;">{{data.roles[0].roleName}} Details</h4>
 <mat-chip-list>
-    <mat-chip fontSet="material-icons-round" data-toggle="tooltip" data-placement="bottom" title="User Type"><mat-icon>supervised_user_circle</mat-icon> {{data[0].roleName}}</mat-chip>
+  <mat-chip fontSet="material-icons-round" data-toggle="tooltip" data-placement="bottom" title="User Type">
+    <mat-icon>supervised_user_circle</mat-icon> {{data.roles[0].roleName}}
+  </mat-chip>
 </mat-chip-list>
+&nbsp;
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Username</mat-label>
+  <input matInput [(ngModel)]='data.username' style=" color: black;" disabled>
+</mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>First name</mat-label>
+    <input matInput [(ngModel)]='data.userFirstName' style=" color: black;" disabled>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Last name</mat-label>
+    <input matInput [(ngModel)]='data.userLastName' style=" color: black;" disabled>
+  </mat-form-field>

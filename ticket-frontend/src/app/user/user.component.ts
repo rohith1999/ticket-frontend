@@ -20,7 +20,6 @@ export class UserComponent implements OnInit {
     this.userService.forUser().subscribe(
 
       (response)=> {
-        console.log(response)
         this.message = response
       },
       (error)=>{

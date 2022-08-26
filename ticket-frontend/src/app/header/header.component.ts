@@ -11,6 +11,8 @@ import { UserService } from '../_services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
+  public roles: any;
+
   constructor(private userAuthService: UserAuthService, 
     private router: Router, 
     public userService: UserService, private dialog: MatDialog) {
@@ -19,9 +21,11 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+     
   }
 
   public isLoggedIn(){
+    this.roles = this.userAuthService.getRoles()
     return this.userAuthService.isLoggedIn()
   }
 
@@ -37,14 +41,14 @@ export class HeaderComponent implements OnInit {
   }
 
   public openUserDetails(): void {
-    console.log(this.userAuthService.getRoles())
+    
     const dialogRef = this.dialog.open(UserDetailsDialog, {
       width: '250px',
-      data: this.userAuthService.getRoles(),
+      data: this.userAuthService.getUserDetails(),
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+
     });
   }
 
