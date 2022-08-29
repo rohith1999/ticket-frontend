@@ -1,34 +1,45 @@
 <mat-card class="card-layout text-center">
-  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+  <form id="registerForm"  [formGroup]="registerForm" (ngSubmit)="register(registerForm)" novalidate>
     <h4 class="text-center">Register a new user</h4>
     <p>
       <mat-form-field class="login-field" appearance="fill">
         <mat-label>Username</mat-label>
-        <input type="text" ngModel name="userName" id="userName" matInput>
+        <input type="text" ngModel name="userName" id="userName" formControlName="userName" matInput >
+        <mat-error *ngIf="registerError('userName', 'required')">User name is required</mat-error>
+        <mat-error *ngIf="registerError('userName', 'maxlength')">Limit exceed</mat-error>  
+
       </mat-form-field>
     </p>
     <p>
       <mat-form-field class="login-field" appearance="fill">
         <mat-label>First name</mat-label>
-        <input type="text" ngModel name="userFirstName" id="userFirstName" matInput>
+        <input type="text" ngModel name="userFirstName" id="userFirstName" formControlName="userFirstName" matInput >
+        <mat-error *ngIf="registerError('userFirstName', 'required')">First name is required</mat-error>
+        <mat-error *ngIf="registerError('userFirstName', 'maxlength')">Limit exceed</mat-error> 
       </mat-form-field>
       &nbsp;
       <mat-form-field class="login-field" appearance="fill">
         <mat-label>Last name</mat-label>
-        <input type="text" ngModel name="userLastName" id="userLastName" matInput>
+        <input type="text" ngModel name="userLastName" id="userLastName" formControlName="userLastName"  matInput >
+        <mat-error *ngIf="registerError('userLastName', 'required')">Last name is required</mat-error>
+        <mat-error *ngIf="registerError('userLastName', 'maxlength')">Limit exceed</mat-error> 
       </mat-form-field>
     </p>
 
     <p>
       <mat-form-field class="login-field" appearance="fill">
         <mat-label>Password</mat-label>
-        <input type="password" ngModel name="userPassword" id="userPassword" matInput>
+        <input type="password" ngModel name="userPassword" id="userPassword" formControlName="userPassword" matInput >
+        <mat-error *ngIf="registerError('userPassword', 'required')">Password is required</mat-error>
+        <mat-error *ngIf="registerError('userPassword', 'maxlength')">Limit exceed</mat-error> 
       </mat-form-field>
       &nbsp;
       <mat-form-field class="login-field" appearance="fill">
         <mat-label>Confirm Password</mat-label>
-        <input  type="password" ngModel name="userConfirmPassword" id="userConfirmPassword" matInput required>
-        <mat-hint style="color: red;" *ngIf="registerForm.value.userPassword!== registerForm.value.userConfirmPassword">error</mat-hint>
+        <input  type="password" ngModel name="userConfirmPassword" id="userConfirmPassword" formControlName="userConfirmPassword"  matInput >
+        <mat-error *ngIf="registerError('userConfirmPassword', 'required')">Confirm password is required</mat-error>
+        <mat-error *ngIf="registerError('userConfirmPassword', 'maxlength')">Limit exceed</mat-error>  
+        <mat-error *ngIf="f['userConfirmPassword'].errors?.['matching']">Password does not match</mat-error>  
 
       </mat-form-field>
     </p>
