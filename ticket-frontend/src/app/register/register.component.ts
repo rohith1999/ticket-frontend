@@ -43,12 +43,9 @@ export class RegisterComponent implements OnInit {
 
 
   register(registerForm: FormGroup){
-       
-        
-
-
     if(registerForm.valid){
-      console.log(registerForm.value);
+      delete registerForm.value.userConfirmPassword;
+      console.log(this.registerForm.value);
     }
 
 
